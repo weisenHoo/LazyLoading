@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        ul {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        li {
+            list-style: none;
+            float: left;
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            background: red;
+            margin: 10px;
+        }
+
+        img {
+            width: 100%;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            //获得浏览器高度
+            var winH = $(window).height();
+
+            //获得li标签数组长度
+            var len = $("li").length;
+
+            //添加滚动条事件
+            $(document).scroll(function () {
+                //获得当前滚动条高度
+                var srcTop = $(window).scrollTop();
+                //console.log(srcTop);
+
+                //循环所有li标签
+                for (var a = 0; a < len; a++) {
+                    //console.log(a);
+
+                    //获得到每个li标签距离文档顶部的距离
+                    var LTop = $("li").eq(a).offset().top;
+
+                    //获得当前元素的实际高度
+                    var LHei = $("li").eq(a).outerHeight();
+
+                    //判断当前元素是否在浏览器可视区域内
+                    if (LTop >= srcTop && LTop <= srcTop + winH || LTop + LHei >= srcTop && LTop + LHei <= srcTop + winH) {
+                        //console.log(a);
+
+                        //获得date-img属性
+                        var src = $("li").eq(a).attr("date-img");
+                        //console.log(src);
+
+                        //将获得到的属性塞到img的src属性中
+                        $("li").eq(a).find('img').attr('src', src);
+                    }
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+
+<ul>
+    <li date-img="img/01.jpeg"><img src="" alt=""></li>
+    <li date-img="img/02.jpeg"><img src="" alt=""></li>
+    <li date-img="img/03.jpeg"><img src="" alt=""></li>
+    <li date-img="img/04.jpeg"><img src="" alt=""></li>
+    <li date-img="img/05.jpeg"><img src="" alt=""></li>
+    <li date-img="img/06.jpeg"><img src="" alt=""></li>
+    <li date-img="img/07.jpeg"><img src="" alt=""></li>
+    <li date-img="img/08.jpeg"><img src="" alt=""></li>
+    <li date-img="img/09.jpeg"><img src="" alt=""></li>
+    <li date-img="img/10.jpeg"><img src="" alt=""></li>
+    <li date-img="img/11.jpeg"><img src="" alt=""></li>
+    <li date-img="img/12.jpeg"><img src="" alt=""></li>
+    <li date-img="img/13.jpeg"><img src="" alt=""></li>
+    <li date-img="img/14.jpeg"><img src="" alt=""></li>
+    <li date-img="img/15.jpeg"><img src="" alt=""></li>
+    <li date-img="img/16.jpeg"><img src="" alt=""></li>
+    <li date-img="img/17.jpeg"><img src="" alt=""></li>
+    <li date-img="img/18.jpeg"><img src="" alt=""></li>
+    <li date-img="img/19.jpeg"><img src="" alt=""></li>
+    <li date-img="img/20.jpeg"><img src="" alt=""></li>
+    <!--/-->
+    <li date-img="img/01.jpeg"><img src="" alt=""></li>
+    <li date-img="img/02.jpeg"><img src="" alt=""></li>
+    <li date-img="img/03.jpeg"><img src="" alt=""></li>
+    <li date-img="img/04.jpeg"><img src="" alt=""></li>
+    <li date-img="img/05.jpeg"><img src="" alt=""></li>
+    <li date-img="img/06.jpeg"><img src="" alt=""></li>
+    <li date-img="img/07.jpeg"><img src="" alt=""></li>
+    <li date-img="img/08.jpeg"><img src="" alt=""></li>
+    <li date-img="img/09.jpeg"><img src="" alt=""></li>
+    <li date-img="img/10.jpeg"><img src="" alt=""></li>
+    <li date-img="img/11.jpeg"><img src="" alt=""></li>
+    <li date-img="img/12.jpeg"><img src="" alt=""></li>
+    <li date-img="img/13.jpeg"><img src="" alt=""></li>
+    <li date-img="img/14.jpeg"><img src="" alt=""></li>
+    <li date-img="img/15.jpeg"><img src="" alt=""></li>
+    <li date-img="img/16.jpeg"><img src="" alt=""></li>
+    <li date-img="img/17.jpeg"><img src="" alt=""></li>
+    <li date-img="img/18.jpeg"><img src="" alt=""></li>
+    <li date-img="img/19.jpeg"><img src="" alt=""></li>
+    <li date-img="img/20.jpeg"><img src="" alt=""></li>
+    <!--/-->
+    <li date-img="img/01.jpeg"><img src="" alt=""></li>
+    <li date-img="img/02.jpeg"><img src="" alt=""></li>
+    <li date-img="img/03.jpeg"><img src="" alt=""></li>
+    <li date-img="img/04.jpeg"><img src="" alt=""></li>
+    <li date-img="img/05.jpeg"><img src="" alt=""></li>
+    <li date-img="img/06.jpeg"><img src="" alt=""></li>
+    <li date-img="img/07.jpeg"><img src="" alt=""></li>
+    <li date-img="img/08.jpeg"><img src="" alt=""></li>
+    <li date-img="img/09.jpeg"><img src="" alt=""></li>
+    <li date-img="img/10.jpeg"><img src="" alt=""></li>
+    <li date-img="img/11.jpeg"><img src="" alt=""></li>
+    <li date-img="img/12.jpeg"><img src="" alt=""></li>
+    <li date-img="img/13.jpeg"><img src="" alt=""></li>
+    <li date-img="img/14.jpeg"><img src="" alt=""></li>
+    <li date-img="img/15.jpeg"><img src="" alt=""></li>
+    <li date-img="img/16.jpeg"><img src="" alt=""></li>
+    <li date-img="img/17.jpeg"><img src="" alt=""></li>
+    <li date-img="img/18.jpeg"><img src="" alt=""></li>
+    <li date-img="img/19.jpeg"><img src="" alt=""></li>
+    <li date-img="img/20.jpeg"><img src="" alt=""></li>
+    <!--/-->
+    <li date-img="img/01.jpeg"><img src="" alt=""></li>
+    <li date-img="img/02.jpeg"><img src="" alt=""></li>
+    <li date-img="img/03.jpeg"><img src="" alt=""></li>
+    <li date-img="img/04.jpeg"><img src="" alt=""></li>
+    <li date-img="img/05.jpeg"><img src="" alt=""></li>
+    <li date-img="img/06.jpeg"><img src="" alt=""></li>
+    <li date-img="img/07.jpeg"><img src="" alt=""></li>
+    <li date-img="img/08.jpeg"><img src="" alt=""></li>
+    <li date-img="img/09.jpeg"><img src="" alt=""></li>
+    <li date-img="img/10.jpeg"><img src="" alt=""></li>
+    <li date-img="img/11.jpeg"><img src="" alt=""></li>
+    <li date-img="img/12.jpeg"><img src="" alt=""></li>
+    <li date-img="img/13.jpeg"><img src="" alt=""></li>
+    <li date-img="img/14.jpeg"><img src="" alt=""></li>
+    <li date-img="img/15.jpeg"><img src="" alt=""></li>
+    <li date-img="img/16.jpeg"><img src="" alt=""></li>
+    <li date-img="img/17.jpeg"><img src="" alt=""></li>
+    <li date-img="img/18.jpeg"><img src="" alt=""></li>
+    <li date-img="img/19.jpeg"><img src="" alt=""></li>
+    <li date-img="img/20.jpeg"><img src="" alt=""></li>
+    <!--/-->
+    <li date-img="img/01.jpeg"><img src="" alt=""></li>
+    <li date-img="img/02.jpeg"><img src="" alt=""></li>
+    <li date-img="img/03.jpeg"><img src="" alt=""></li>
+    <li date-img="img/04.jpeg"><img src="" alt=""></li>
+    <li date-img="img/05.jpeg"><img src="" alt=""></li>
+    <li date-img="img/06.jpeg"><img src="" alt=""></li>
+    <li date-img="img/07.jpeg"><img src="" alt=""></li>
+    <li date-img="img/08.jpeg"><img src="" alt=""></li>
+    <li date-img="img/09.jpeg"><img src="" alt=""></li>
+    <li date-img="img/10.jpeg"><img src="" alt=""></li>
+    <li date-img="img/11.jpeg"><img src="" alt=""></li>
+    <li date-img="img/12.jpeg"><img src="" alt=""></li>
+    <li date-img="img/13.jpeg"><img src="" alt=""></li>
+    <li date-img="img/14.jpeg"><img src="" alt=""></li>
+    <li date-img="img/15.jpeg"><img src="" alt=""></li>
+    <li date-img="img/16.jpeg"><img src="" alt=""></li>
+    <li date-img="img/17.jpeg"><img src="" alt=""></li>
+    <li date-img="img/18.jpeg"><img src="" alt=""></li>
+    <li date-img="img/19.jpeg"><img src="" alt=""></li>
+    <li date-img="img/20.jpeg"><img src="" alt=""></li>
+    <!--/-->
+    <li date-img="img/01.jpeg"><img src="" alt=""></li>
+    <li date-img="img/02.jpeg"><img src="" alt=""></li>
+    <li date-img="img/03.jpeg"><img src="" alt=""></li>
+    <li date-img="img/04.jpeg"><img src="" alt=""></li>
+    <li date-img="img/05.jpeg"><img src="" alt=""></li>
+    <li date-img="img/06.jpeg"><img src="" alt=""></li>
+    <li date-img="img/07.jpeg"><img src="" alt=""></li>
+    <li date-img="img/08.jpeg"><img src="" alt=""></li>
+    <li date-img="img/09.jpeg"><img src="" alt=""></li>
+    <li date-img="img/10.jpeg"><img src="" alt=""></li>
+    <li date-img="img/11.jpeg"><img src="" alt=""></li>
+    <li date-img="img/12.jpeg"><img src="" alt=""></li>
+    <li date-img="img/13.jpeg"><img src="" alt=""></li>
+    <li date-img="img/14.jpeg"><img src="" alt=""></li>
+    <li date-img="img/15.jpeg"><img src="" alt=""></li>
+    <li date-img="img/16.jpeg"><img src="" alt=""></li>
+    <li date-img="img/17.jpeg"><img src="" alt=""></li>
+    <li date-img="img/18.jpeg"><img src="" alt=""></li>
+    <li date-img="img/19.jpeg"><img src="" alt=""></li>
+    <li date-img="img/20.jpeg"><img src="" alt=""></li>
+    <!--/-->
+</ul>
+
+
+</body>
+</html>

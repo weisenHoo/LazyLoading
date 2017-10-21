@@ -41,8 +41,17 @@
             //获得li标签数组长度
             var len = $("li").length;
 
+            //刷新页面立即加载...
+            loding();
+
             //添加滚动条事件
             $(document).scroll(function () {
+
+                //滚动加载
+                loding();
+            })
+
+            function loding(){
                 //获得当前滚动条高度
                 var srcTop = $(window).scrollTop();
                 //console.log(srcTop);
@@ -69,7 +78,7 @@
                         $("li").eq(a).find('img').attr('src', src);
                     }
                 }
-            })
+            }
         })
     </script>
 </head>

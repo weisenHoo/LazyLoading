@@ -11,13 +11,11 @@
             padding: 0px;
             margin: 0px;
         }
-
         ul {
             width: 100%;
             height: auto;
             overflow: hidden;
         }
-
         li {
             list-style: none;
             float: left;
@@ -27,7 +25,6 @@
             background: red;
             margin: 10px;
         }
-
         img {
             width: 100%;
         }
@@ -37,39 +34,37 @@
         $(function () {
             //获得浏览器高度
             var winH = $(window).height();
-
             //获得li标签数组长度
             var len = $("li").length;
-
+            //刷新页面立即加载...
+            loding();
             //添加滚动条事件
             $(document).scroll(function () {
+                //滚动加载
+                loding();
+            })
+            function loding(){
                 //获得当前滚动条高度
                 var srcTop = $(window).scrollTop();
                 //console.log(srcTop);
-
                 //循环所有li标签
                 for (var a = 0; a < len; a++) {
                     //console.log(a);
-
                     //获得到每个li标签距离文档顶部的距离
                     var LTop = $("li").eq(a).offset().top;
-
                     //获得当前元素的实际高度
                     var LHei = $("li").eq(a).outerHeight();
-
                     //判断当前元素是否在浏览器可视区域内
                     if (LTop >= srcTop && LTop <= srcTop + winH || LTop + LHei >= srcTop && LTop + LHei <= srcTop + winH) {
                         //console.log(a);
-
                         //获得date-img属性
                         var src = $("li").eq(a).attr("date-img");
                         //console.log(src);
-
                         //将获得到的属性塞到img的src属性中
                         $("li").eq(a).find('img').attr('src', src);
                     }
                 }
-            })
+            }
         })
     </script>
 </head>
